@@ -1,0 +1,4 @@
+virtual/
+start.sh
+*.log
+*.pyc
