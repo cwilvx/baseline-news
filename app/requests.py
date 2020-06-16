@@ -4,7 +4,7 @@ from .models import Sources,Headlines,Everything
 api_key = '09068235c1334498bb71501a0b9f0807'
 sources_url = 'https://newsapi.org/v2/sources?apiKey={}'
 headlines_url = 'https://newsapi.org/v2/top-headlines?sources={}&apikey=09068235c1334498bb71501a0b9f0807'
-everything_url = 'https://newsapi.org/v2/everything?q=trending&language=en&apiKey={}'
+everything_url = 'https://newsapi.org/v2/everything?q=play%20station&language=en&apiKey={}'
 
 # def configure_request(app):
 # 	global api_key,sources_url

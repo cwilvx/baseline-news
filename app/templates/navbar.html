@@ -1,20 +1,39 @@
-<div class="site-header sticky-top py-1" style="  background-color: rgba(0, 0, 0, .85);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);" role="navigation" >
-  <div class="container-fluid" >
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
-        <span class="sr-only" >Toggle navigation</span>
-        <span class="icon-bar" ></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" style="  color: #999;
-      transition: ease-in-out color .15s;">News Highlight</a>
+<link rel="stylesheet" href="{{url_for('static',filename='css/nav1.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="navbar navbar-light nav-container" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand text-uppercase" href="/"> Zorin News </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="links"><a href="/">Home</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="links"><a href="#">Profile</a></li>
+                  <li class="btn-sign-out text-center"><a href="#">Sign out</a></li>
+                  <li class="btn-sign-in text-center"><a href="#">Sign in</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
-    
-  </div>
-</div>
-<br>
-<br>
+  </body>
+</html>
+

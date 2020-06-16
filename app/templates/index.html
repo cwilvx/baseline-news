@@ -11,6 +11,8 @@
   {% endif %}
 {% extends 'base.html' %}
 
+
+
 {% block content %}
 <div class="container">
   <div class="row">
@@ -25,12 +27,11 @@
               <a href="/source/{{source.id}}">{{ source.name }}</a>
             </p>
           {% endfor %}
-        </nav>
+        </nav>     
       </div>
-	  </div>
-  </div>
-
-  <div class="container col-md-8 sidebar" style="background-color: #fff;
+    </div>
+  
+    <div class="container col-md-7" style="background-color: #fff;
     border: 1px solid #e8e8e9;
     padding: 25px 20px;float: right">
       <div >
@@ -50,9 +51,16 @@
           <br>
           <hr>
         </div>
+    
+
+    
+      {% endif %}
+      {% endfor %}
       </div>
-  </div>
-{% endif %}
-{% endfor %}
+    </div>
+  </div> 
 </div>
+
+
+
 {% endblock %}
