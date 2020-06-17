@@ -33,12 +33,11 @@
                 <ul class="nav navbar-nav navbar-right">
                   
                   <li class="links"><a href="#">Profile</a></li>
-                  <li class="btn-sign-out text-center"><a href="#">Sign out</a></li>
-                  <li class="btn-sign-in text-center"><a href="#">Sign in</a></li>
+                  <li class="btn-sign-out text-center"><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+                  <li class="btn-sign-in text-center"><a href="{{url_for('auth.login')}}">Sign in</a></li>
                 </ul>
             </div>
         </div>
     </div>
   </body>
 </html>
-

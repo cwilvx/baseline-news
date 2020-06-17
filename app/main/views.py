@@ -6,10 +6,10 @@ from ..requests import get_sources,get_headlines,get_everything,search_news
 def index():
 	everything = get_everything()
 	title = 'News Highlight'
-	searching_news = request.args.get('keyword')
+	search_news = request.args.get('keyword')
 
-	if searching_news:
-		redirect(url_for('.search',keyword = searching_news))
+	if search_news:
+		redirect(url_for('.search',keyword = search_news))
 	return render_template('index.html',title = title,everything = everything)
 
 @main.route('/source/<source>')
@@ -26,8 +26,9 @@ def sources():
 	print(sources)
 	return render_template('sources.html',sources = sources)
 
-@main.route('/search/<keyword>')
-def search(keyword):
+@main.route('/search/',methods=['POST'])
+def search():
+	keyword = request.form['keyword']
 	keyword_list = keyword.split(" ")
 	keyword_format = '%20'.join(keyword_list)
 	searched_news = search_news(keyword_format)
