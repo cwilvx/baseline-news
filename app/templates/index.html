@@ -1,66 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% if title %}
-  <title>{{ title }}</title>
-  {% else %}
-  <title>News Highlight</title>
-  {% endif %}
 {% extends 'base.html' %}
-
-
-
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="container col-md-4 " style="background-color: #fff;
-    border: 1px solid #e8e8e9;
-    padding: 25px 20px;">     
-      <div class="sidebar-sticky"> 
-        <nav class="d-none d-md-block bg-light sidebar">
-          <h1 class="text-muted " style="color:grey; "> News Sources A-Z</h1>
-          {% for source in sources %}
-            <p>
-              <a href="/source/{{source.id}}">{{ source.name }}</a>
-            </p>
-          {% endfor %}
-        </nav>     
+<form action="/search/{keyword}">
+  <input type="text" name="keyword" id="keyword" />
+  <input type="submit">Submit</input>
+</form>
+
+<div class="row">
+  {% for everything_item in everything %}
+  {% if everything_item.urlToImage%}
+  <div class="example-1 card col-sm-12 col-xs-12 col-md-6 col-lg-4 col-xl-4">
+    <div class="wrapper" style="background-image: url({{everything_item.urlToImage}});">
+      <div class="date">
+        <span class="year">{{everything_item.publishedAt|truncate(13)}}</span>
       </div>
-    </div>
-  
-    <div class="container col-md-7" style="background-color: #fff;
-    border: 1px solid #e8e8e9;
-    padding: 25px 20px;float: right">
-      <div >
-        <h1> Trending News Globally </h1>
-        <hr>
-        {% for everything_item in everything %}
-        {% if everything_item.urlToImage%}
-        <div class="card">
-          <div class="card-body">
-            <h5 style="size:21px;color: grey" class="card-title">{{ everything_item.title }}</h5>
-            <hr>
-            <p class="card-text">{{ everything_item.description }}</p>
-            <a href="{{ everything_item.url }}">Read more...</a>
-            <p class="card-text"><small class="text-muted">Article by {{ everything_item.author }} on {{ everything_item.publishedAt}}</small></p>
-          </div>
-          <img src="{{ everything_item.urlToImage }}" class="card-img-top img-responsive" alt="...">
-          <br>
-          <hr>
+      <div class="data">
+        <div class="content">
+          <span class="author">{{ everything_item.author }}</span>
+          <h1 class="title"><a href="{{ everything_item.url }}">{{ everything_item.title }}</a></h1>
+          <p class="text">{{ everything_item.description }}</p>
+          <label for="show-menu" class="menu-button"><span></span></label>
         </div>
-    
-
-    
-      {% endif %}
-      {% endfor %}
+        <input type="checkbox" id="show-menu" />
+        <ul class="menu-content">
+          <li>
+            <a href="#" class="fa fa-bookmark-o"></a>
+          </li>
+          <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+          <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+        </ul>
       </div>
     </div>
-  </div> 
+  </div>
+  {% endif %}
+  {% endfor %}
 </div>
-
-
-
 {% endblock %}

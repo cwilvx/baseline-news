@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+	{% for everything_item in searched_news %}
+	{% if everything_item.urlToImage%}
+	<div class="example-1 card col-sm-12 col-xs-12 col-md-6 col-lg-4 col-xl-4">
+	  <div class="wrapper" style="background-image: url({{everything_item.urlToImage}});">
+		<div class="date">
+		  <span class="year">{{everything_item.publishedAt|truncate(13)}}</span>
+		</div>
+		<div class="data">
+		  <div class="content">
+			<span class="author">{{ everything_item.author }}</span>
+			<h1 class="title"><a href="{{ everything_item.url }}">{{ everything_item.title }}</a></h1>
+			<p class="text">{{ everything_item.description }}</p>
+			<label for="show-menu" class="menu-button"><span></span></label>
+		  </div>
+		  <input type="checkbox" id="show-menu" />
+		  <ul class="menu-content">
+			<li>
+			  <a href="#" class="fa fa-bookmark-o"></a>
+			</li>
+			<li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+			<li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+	{% endif %}
+	{% endfor %}
+  </div>
+{% endblock %}

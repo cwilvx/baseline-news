@@ -19,7 +19,7 @@ class Headlines:
 		self.content = content
 
 class Everything:
-	def __init__(self,author,title,description,url,urlToImage,publishedAt,content):
+	def __init__(self,author,title,description,url,urlToImage,publishedAt,content,totalResults):
 		self.author = author
 		self.title = title
 		self.description = description
@@ -27,3 +27,4 @@ class Everything:
 		self.urlToImage = urlToImage
 		self.publishedAt = publishedAt
 		self.content = content
+		self.totalResults = totalResults

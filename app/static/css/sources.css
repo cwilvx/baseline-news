@@ -1,0 +1,27 @@
+
+a {
+	color: rgb(82, 0, 78);
+}
+
+a :hover{
+	text-decoration: none !important;
+}
+.center-div
+{
+  border-radius: 3px;
+  height: 70px;
+}
+.center-div :hover
+{
+  margin: auto;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+a {
+	padding: 20px;
+}
+.col-sx-4{
+	display: list-item;
+	list-style-type: none;
+	min-width: 100px;
+}

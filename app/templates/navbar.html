@@ -1,6 +1,9 @@
 
-<link rel="stylesheet" href="{{url_for('static',filename='css/nav1.css')}}">
-<link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/sources.css')}}">
+<script>document.addEventListener("touchstart", function(){}, true);</script>
 
 <!DOCTYPE html>
 <html>
@@ -24,14 +27,16 @@
                 <ul class="nav navbar-nav">
                     <li class="links"><a href="/">Home</a></li>
                 </ul>
-
+                <ul class="nav navbar-nav">
+                  <li class="links"><a href="/sources">Sources</a></li>
+              </ul>
                 <ul class="nav navbar-nav navbar-right">
+                  
                   <li class="links"><a href="#">Profile</a></li>
                   <li class="btn-sign-out text-center"><a href="#">Sign out</a></li>
                   <li class="btn-sign-in text-center"><a href="#">Sign in</a></li>
                 </ul>
             </div>
-
         </div>
     </div>
   </body>

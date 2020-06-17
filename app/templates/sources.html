@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for source in sources %}
+<div class="col-sx-4 col-sm-3 col-md-5 col-lg-3 col-xl-4">
+	<div class="card center-div text-center">
+		<div class="card-body">
+			<a href="source/{{source.id}}">{{source.name}}</a>
+		</div>
+	</div>
+</div>
+
+{% endfor %}
+{% endblock %}

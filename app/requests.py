@@ -1,15 +1,17 @@
 import urllib.request, json
 from .models import Sources,Headlines,Everything
 
-api_key = '09068235c1334498bb71501a0b9f0807'
-sources_url = 'https://newsapi.org/v2/sources?apiKey={}'
-headlines_url = 'https://newsapi.org/v2/top-headlines?sources={}&apikey=09068235c1334498bb71501a0b9f0807'
-everything_url = 'https://newsapi.org/v2/everything?q=play%20station&language=en&apiKey={}'
+api_key = None
+sources_url = None
+headlines_url = None
+everything_url = None
 
-# def configure_request(app):
-# 	global api_key,sources_url
-# 	api_key = app.config["API_KEY"]
-# 	sources_url = app.config["SOURCES_URL"]
+def configure_request(app):
+	global api_key,sources_url,headlines_url,everything_url
+	api_key = app.config["API_KEY"]
+	sources_url = app.config["SOURCES_URL"]
+	headlines_url = app.config["HEADLINES_URL"]
+	everything_url = app.config["EVERYTHING_URL"]
 
 def get_sources():
 	get_sources_url = sources_url.format(api_key)
@@ -42,7 +44,7 @@ def process_sources_results(sources_results_list):
 	return sources_results
 
 def get_headlines(source):
-	get_headlines_url = headlines_url.format(source)
+	get_headlines_url = headlines_url.format(source,api_key)
 
 	with urllib.request.urlopen(get_headlines_url) as url:
 		headlines_data = url.read()
@@ -95,8 +97,40 @@ def process_everything_results(everything_results_list):
 		urlToImage = everything_item.get('urlToImage')
 		publishedAt = everything_item.get('publishedAt')
 		content = everything_item.get('content')
+		totalResults = everything_item.get('totalResults')
 
-		everything_object = Everything(author,title,description,url,urlToImage,publishedAt,content)
+		everything_object = Everything(author,title,description,url,urlToImage,publishedAt,content,totalResults)
 		everything_results.append(everything_object)
 	
 	return everything_results
+
+def search_news(keyword):
+	search_news_url = 'https://newsapi.org/v2/everything?q={}&language=en&apiKey={}'.format(keyword,api_key)
+	with urllib.request.urlopen(search_news_url) as url:
+		search_news_data = url.read()
+		search_news_response = json.loads(search_news_data)
+
+		search_news_results = None
+
+		if search_news_response['articles']:
+			search_news_list = search_news_response['articles']
+			search_news_results = process_search_results(search_news_list)
+
+	return search_news_results
+
+def process_search_results(search_news_list):
+	news_results = []
+	for search_results_item in search_news_list:
+		author = search_results_item.get('author')
+		title = search_results_item.get('title')
+		description = search_results_item.get('description')
+		url = search_results_item.get('url')
+		urlToImage = search_results_item.get('urlToImage')
+		publishedAt = search_results_item.get('publishedAt')
+		content = search_results_item.get('content')
+		totalResults = search_results_item.get('totalResults')
+
+		if content:
+			news_results_object = Everything(author,title,description,url,urlToImage,publishedAt,content,totalResults)
+			news_results.append(news_results_object)
+	return news_results
