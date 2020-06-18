@@ -1,16 +1,13 @@
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..requests import get_sources,get_headlines,get_everything,search_news
+from flask_login import login_required,current_user
 
 @main.route('/')
 def index():
 	everything = get_everything()
 	title = 'News Highlight'
-	search_news = request.args.get('keyword')
-
-	if search_news:
-		redirect(url_for('.search',keyword = search_news))
-	return render_template('index.html',title = title,everything = everything)
+	return render_template('index.html',title = title,everything = everything,current_user = current_user)
 
 @main.route('/source/<source>')
 def Headlines(source):
@@ -26,11 +23,12 @@ def sources():
 	print(sources)
 	return render_template('sources.html',sources = sources)
 
-@main.route('/search/',methods=['POST'])
+@main.route('/search/',methods=['GET'])
 def search():
-	keyword = request.form['keyword']
+	keyword = request.args.get('keyword')
 	keyword_list = keyword.split(" ")
 	keyword_format = '%20'.join(keyword_list)
 	searched_news = search_news(keyword_format)
 	title = f'Search results for {keyword} '
+	
 	return render_template('search.html',searched_news = searched_news)

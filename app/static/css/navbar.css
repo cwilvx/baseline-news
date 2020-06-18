@@ -1,15 +1,22 @@
 .nav-container {
-    border: 1px solid white;
     border-radius: 0;
+    background-color: #006d77;
 }
 
 .navbar-brand{
-  color: black;
+  color: rgb(255, 255, 255);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 180%;
+  margin-top: 10px;
+}
+
+.navbar-brand :hover{
+  color: #edf6f9;
 }
 
 .btn-sign-out{
   border-radius: 5px;
-  background-color: blueviolet;
+  background-color: #e29578;
   height: 50px;
   color: white;
   width: 100px;
@@ -19,7 +26,7 @@
 
 .btn-sign-in{
   border-radius: 5px;
-  background-color: lightseagreen;
+  background-color: #83c5be;
   height: 50px;
   color: white;
   width: 100px;
@@ -39,24 +46,40 @@
 .btn-sign-out a:hover{
   color: black;
 }
+.btn-sign-outa{
+  border-radius: 5px;
+  background-color: rgba(137, 43, 226, 0);
+  height: 50px;
+  color: white;
+  width: 100px;
+  margin: 10px;
 
+}
+
+.btn-sign-outa a{
+  color: white;
+}
+.btn-sign-outa a:hover{
+  color: black;
+}
 .navbar-nav :hover{
   text-decoration: none;
   background-color: white !important;
   border-radius: 1px;
   background-color: grey;  
 }
-.links{
+.links a{
+  color: white;
+  margin: 10px;
+
+}
+.links a:hover{
   color: black;
   margin: 10px;
+  background-color: #edf6f9;
 
 }
 
-.navbar-brand{
-  margin: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 180%;
-}
 .navbar{
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

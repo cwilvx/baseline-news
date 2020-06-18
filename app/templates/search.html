@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search Results</title>
+</head>
+<body>
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
@@ -26,7 +34,12 @@
 		</div>
 	  </div>
 	</div>
+	{%else%}
+	<p>nothing here</p>
 	{% endif %}
 	{% endfor %}
   </div>
 {% endblock %}
+</body>
+</html>
+

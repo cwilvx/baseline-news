@@ -129,8 +129,7 @@ def process_search_results(search_news_list):
 		publishedAt = search_results_item.get('publishedAt')
 		content = search_results_item.get('content')
 		totalResults = search_results_item.get('totalResults')
-
-		if content:
-			news_results_object = Everything(author,title,description,url,urlToImage,publishedAt,content,totalResults)
-			news_results.append(news_results_object)
+		
+		news_results_object = Everything(author,title,description,url,urlToImage,publishedAt,content,totalResults)
+		news_results.append(news_results_object)
 	return news_results

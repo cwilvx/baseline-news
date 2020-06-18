@@ -1,10 +1,11 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin,login_manager
+from flask_login import UserMixin
+from app import login_manager
 
-# @login_manager.user_loader
-# def load_user(user_id):
-# 	return User.query.get(int(user_id))
+@login_manager.user_loader
+def load_user(user_id):
+	return User.query.get(int(user_id))
 
 class Sources:
 	def __init__(self,id,name,description,url,category,language,country):

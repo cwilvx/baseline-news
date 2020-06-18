@@ -1,90 +1,163 @@
-.contact-clean {
-  background: #f1f7fc;
-  padding: 80px 0;
-}
+@import url('https://rsms.me/inter/inter-ui.css');
 
-@media (max-width:767px) {
-  .contact-clean {
-    padding: 20px 0;
+.page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 40px);
+  position: absolute;
+  place-content: center;
+  width: calc(100% - 40px);
+}
+@media (max-width: 767px) {
+  .page {
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 }
-
-.contact-clean form {
-  max-width: 480px;
-  width: 90%;
+.container {
+  display: flex;
+  height: 320px;
   margin: 0 auto;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 4px;
-  color: #505e6c;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  width: 640px;
 }
-
-@media (max-width:767px) {
-  .contact-clean form {
-    padding: 30px;
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    height: 630px;
+    width: 320px;
   }
 }
-
-.contact-clean h2 {
-  margin-top: 5px;
-  font-weight: bold;
-  font-size: 28px;
-  margin-bottom: 36px;
-  color: inherit;
+.left {
+  background: white;
+  height: calc(100% - 40px);
+  top: 20px;
+  position: relative;
+  width: 50%;
+  -webkit-box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
+  -moz-box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
+  box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
 }
-
-.contact-clean .form-group:last-child {
+@media (max-width: 767px) {
+  .left {
+    height: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    max-height: 270px;
+  }
+}
+.login {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+.eula {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
+}
+.right {
+  background: #474A59;
+  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+  color: #F1F1F2;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .right {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+}
+svg {
+  position: absolute;
+  width: 320px;
+}
+path {
+  fill: none;
+  stroke: url(#linearGradient);;
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+.form {
+  margin: 40px;
+  position: absolute;
+}
+label {
+  color:  #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
-
-.contact-clean form .form-control {
-  background: #fff;
-  border-radius: 2px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
-  outline: none;
-  color: inherit;
-  padding-left: 12px;
-  height: 42px;
-}
-
-.contact-clean form .form-control:focus {
-  border: 1px solid #b2b2b2;
-}
-
-.contact-clean form textarea.form-control {
-  min-height: 100px;
-  max-height: 260px;
-  padding-top: 10px;
-  resize: vertical;
-}
-
-.contact-clean form .btn {
-  padding: 16px 32px;
-  border: none;
-  background: none;
-  box-shadow: none;
-  text-shadow: none;
-  opacity: 0.9;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  line-height: 1;
+input {
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid white;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
   outline: none !important;
+  width: 100%;
 }
-
-.contact-clean form .btn:hover {
-  opacity: 1;
+#password, #email{
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid white;
+  text-decoration: none !important;
+  border-radius: 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
 }
-
-.contact-clean form .btn:active {
-  transform: translateY(1px);
+#password #email :focus{
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
 }
-
-.contact-clean form .btn-primary {
-  background-color: #055ada !important;
-  margin-top: 15px;
-  color: #fff;
+input::-moz-focus-inner { 
+  border: 0; 
 }
-
+.form-control:focus{
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#remember{
+  height: auto;
+  width: auto;
+}
+#submit {
+  color: #707075;
+  height: 50px;
+  margin-top: 4px;
+  transition: color 300ms;
+  border: 2px solid rgb(4, 185, 146);
+}
+#submit:focus {
+  color: #f2f2f2;
+}
+#submit:active {
+  color: #d0d0d2;
+}
+/* .signup{
+  text-align: center;
+  margin-top: 45%;
+} */
+.alert.alert-danger.text-center{
+  padding-left: 40%;
+  background-color: white;
+  border: none;
+}

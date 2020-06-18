@@ -3,7 +3,7 @@ import os
 class Config:
 	SOURCES_URL = 'https://newsapi.org/v2/sources?apiKey={}'
 	HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apikey={}'
-	EVERYTHING_URL = 'https://newsapi.org/v2/everything?q=trending&language=en&apiKey={}'
+	EVERYTHING_URL = 'https://newsapi.org/v2/everything?q=android&language=en&apiKey={}'
 	SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://cwilv:iamcwilv@localhost/__news'
 
 	SQLALCHEMY_TRACK_MODIFICATIONS = True
