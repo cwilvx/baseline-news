@@ -9,9 +9,13 @@ class Config:
 	SQLALCHEMY_TRACK_MODIFICATIONS = True
 	API_KEY = os.environ.get('API_KEY')
 	SECRET_KEY = os.environ.get('SECRET_KEY')
+	UPLOADED_PHOTOS_DEST = 'app/static/photos'
+
+	basedir = os.path.abspath(os.path.dirname(__name__))
+	AVATARS_SAVE_PATH = 'avatars'
 
 class ProdConfig(Config):
-	pass
+	SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
 	pass

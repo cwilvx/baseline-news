@@ -1,0 +1,66 @@
+body {
+  background: url("https://dribbble.s3.amazonaws.com/users/22414/screenshots/1111840/attachments/140702/Sci-fi_2.jpg");
+  background-size: cover;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.profile {
+  width: 600px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: rgba(89, 208, 208, 0.93);
+  min-height: 400px;
+}
+
+.iconset {
+  padding: 25px 35px;
+}
+.iconset i {
+  color: white;
+  padding: 0px 20px;
+  font-size: 25px;
+}
+.iconset.big i {
+  font-size: 40px;
+}
+.iconset .set {
+  display: inline-block;
+  text-align: center;
+}
+.iconset .set .text {
+  display: block;
+  padding-left: 20px;
+}
+
+hr {
+  border: 0px;
+  margin: 0px;
+  border-top: 1px solid white;
+}
+
+.user-info {
+  padding: 20px 10%;
+  text-align: center;
+}
+.user-info .profile-picture {
+  width: 200px;
+  height: 200px;
+  margin: 0px auto;
+  background-size: cover;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 200px;
+}
+.user-info .name {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.user-info .description {
+  margin-top: 20px;
+  font-weight: 100;
+}
+

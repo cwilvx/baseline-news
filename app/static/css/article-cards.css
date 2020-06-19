@@ -90,7 +90,7 @@ h1 {
   transform: translateY(-60px);
 }
 
-.example-1 .date {
+.news-card .date {
   position: absolute;
   top: 0;
   left: 0;
@@ -98,29 +98,29 @@ h1 {
   color: #fff;
   padding: 0.8em;
 }
-.example-1 .date span {
+.news-card .date span {
   display: block;
   text-align: center;
 }
-.example-1 .date .day {
+.news-card .date .day {
   font-weight: 700;
   font-size: 24px;
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
 }
-.example-1 .date .month {
+.news-card .date .month {
   text-transform: uppercase;
 }
-.example-1 .date .month, .example-1 .date .year {
+.news-card .date .month, .news-card .date .year {
   font-size: 12px;
 }
-.example-1 .content {
+.news-card .content {
   background-color: #fff;
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
 }
-.example-1 .title a {
+.news-card .title a {
   color: grey;
 }
-.example-1 .menu-button {
+.news-card .menu-button {
   position: absolute;
   z-index: 999;
   top: 16px;
@@ -129,7 +129,7 @@ h1 {
   text-align: center;
   cursor: pointer;
 }
-.example-1 .menu-button span {
+.news-card .menu-button span {
   width: 5px;
   height: 5px;
   background-color: grey;
@@ -138,7 +138,7 @@ h1 {
   display: inline-block;
   border-radius: 50%;
 }
-.example-1 .menu-button span::after, .example-1 .menu-button span::before {
+.news-card .menu-button span::after, .news-card .menu-button span::before {
   content: "";
   display: block;
   width: 5px;
@@ -147,13 +147,13 @@ h1 {
   position: absolute;
   border-radius: 50%;
 }
-.example-1 .menu-button span::before {
+.news-card .menu-button span::before {
   left: -10px;
 }
-.example-1 .menu-button span::after {
+.news-card .menu-button span::after {
   right: -10px;
 }
-.example-1 .menu-content {
+.news-card .menu-content {
   text-align: center;
   position: absolute;
   top: 0;
@@ -163,20 +163,28 @@ h1 {
   transition: transform 0.3s;
   transform: translateY(0);
 }
-.example-1 .menu-content li {
+.news-card .menu-content li {
   width: 33.333333%;
   float: left;
   background-color: #77d7b9;
   height: 60px;
   position: relative;
 }
-.example-1 .menu-content a {
+.news-card .menu-content a {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
 }
-.example-1 .menu-content span {
+.news-card .menu-content span {
   top: -10px;
+}
+
+.selector img{
+  position: absolute; top:0; left: 0;
+  /* width: 100%;
+  height: auto; */
+  width: auto; 
+  height: 100%;
 }

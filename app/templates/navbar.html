@@ -1,10 +1,11 @@
 
 <link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
 <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/article-cards.css')}}">
 <link rel="stylesheet" href="{{url_for('static',filename='css/sources.css')}}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{url_for('static',filename='css/forms.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}">
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
                 </ul>
                 <ul class="nav navbar-nav">
                   <li class="btn-sign-outa"><a href="/sources">Sources</a></li>
-              </ul>
+                </ul>
               <form method="get" class="nav navbar-nav" action="/search">
                 <div class="wrap">
                   <div class="search">
@@ -44,11 +45,11 @@
                 <ul class="nav navbar-nav navbar-right">
                   {% if current_user.is_anonymous %}
                   <li class="btn-sign-in text-center"><a href="{{url_for('auth.login')}}">Sign in</a></li>
-                  {% else %}
-
-                  <a href="#">Profile</a>
+                  {% else %} 
+                  <li class="btn-sign-outa">
+                    <a href="{{url_for('main.profile',uname = current_user.username)}}">Profile</a>
+                  </li>
                   <li class="btn-sign-out text-center"><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-                  
                   {% endif %}
                 </ul>
             </div>
