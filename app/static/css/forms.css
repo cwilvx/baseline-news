@@ -34,6 +34,7 @@
   top: 20px;
   position: relative;
   width: 50%;
+  height: 400px;
   -webkit-box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
   -moz-box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
   box-shadow: -1px -1px 11px 2px rgba(194,194,194,1);
@@ -49,6 +50,7 @@
 .login {
   font-size: 50px;
   font-weight: 900;
+  color: black;
   margin: 50px 40px 40px;
 }
 .eula {
@@ -63,13 +65,14 @@
   color: #F1F1F2;
   position: relative;
   width: 50%;
+  height: 470px;
 }
 @media (max-width: 767px) {
   .right {
     flex-shrink: 0;
     height: 100%;
     width: 100%;
-    max-height: 350px;
+    height: 450px;
   }
 }
 svg {
@@ -105,9 +108,9 @@ input {
   height: 30px;
   line-height: 30px;
   outline: none !important;
-  width: 100%;
+  width: 200px;
 }
-#password, #email{
+#password,#username,#password2, #email{
   background: transparent;
   border-top: 0;
   border-left: 0;
@@ -122,7 +125,7 @@ input {
   outline: none !important;
   width: 100%;
 }
-#password #email :focus{
+#password #email,#username,#password2 :focus{
   outline:0px !important;
   -webkit-appearance:none;
   box-shadow: none !important;
@@ -161,3 +164,15 @@ input::-moz-focus-inner {
   background-color: white;
   border: none;
 }
+.forma {
+  margin: 0px;
+  position: absolute;
+}
+.forma label {
+    color:  #c2c2c5;
+    display: block;
+    font-size: 14px;
+    height: 16px;
+    margin-top: px;
+    margin-bottom: 5px;
+  }

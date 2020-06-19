@@ -15,26 +15,6 @@ body {
   min-height: 400px;
 }
 
-.iconset {
-  padding: 25px 35px;
-}
-.iconset i {
-  color: white;
-  padding: 0px 20px;
-  font-size: 25px;
-}
-.iconset.big i {
-  font-size: 40px;
-}
-.iconset .set {
-  display: inline-block;
-  text-align: center;
-}
-.iconset .set .text {
-  display: block;
-  padding-left: 20px;
-}
-
 hr {
   border: 0px;
   margin: 0px;
@@ -43,6 +23,9 @@ hr {
 
 .user-info {
   padding: 20px 10%;
+  text-align: center;
+}
+.name{
   text-align: center;
 }
 .user-info .profile-picture {

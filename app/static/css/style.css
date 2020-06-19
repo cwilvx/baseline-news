@@ -97,12 +97,19 @@
 
 .searchTerm {
   width: 100%;
-  border: 1px solid #00B4CC;
+  border-bottom: 2px solid white;
   border-right: none;
   padding: 5px;
   height: auto;
   outline: none;
   background-color: white;
+  color: black;
+  font-size: inherit ;
+}
+.searchTerm:focus, .searchTerm:hover{
+  border-top: 0;
+  border-color: 0;
+  border-right: 0;
 }
 
 .searchButton {
