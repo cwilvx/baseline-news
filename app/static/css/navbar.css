@@ -86,3 +86,30 @@
 .icon-bar{
   background-color: black;
 }
+.loader {
+  width: 19.0rem;
+  height: 19.0rem;
+  margin: 50px auto;
+  position: relative;
+  background: #525e7a;
+  border-radius: 50%;
+  animation: loading 0.5s linear infinite;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  width: 18.5rem;
+  height: 18.5rem;
+  top: 1px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: #c9c9c9;
+  border-radius: 50%;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
