@@ -1,31 +1,27 @@
-{% extends 'auth/auth-base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'base.html' %}
+{% import 'bootstrap/form.html' as wtf %}
 
 {% block content %}
-<div class="page">
 	{% for message in get_flashed_messages() %}
 	<div class="alert alert-danger text-center"style="width: 60%;">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  {{ message }}
 	</div>
 	{% endfor %}
-	<div class="container">
-	  <div class="left">
-		<div class="login">Sign up</div>
-		<div class="eula">By signing up you agree to the ridiculously long terms that you didn't bother to read</div>
-		<p class="text-center" style="padding-top: -10px; color: gray;"> Already have account?<a href="{{url_for('auth.login')}}">Sign In here</a></p>
-	  </div>
-	  <div class="right">
-		<svg viewBox="0 0 320 300">
-		  <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
-		</svg>
-		<div class="forma">
-			{{ wtf.quick_form(form) }}
-		</div>
-	  </div>
-	</div>
-	
-
-
-  </div>
+        <div class="container" style="margin-top: 30px;">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+					<div class="card text-dark" style="width: 100%;">
+						<div class="card-body">
+							<h5 class="card-title">Baseline Sign Up</h5>
+							<hr class="bg-dark">
+							{{ wtf.render_form(form) }}
+							<p><span>Already have an account?<a href="{{url_for('auth.login')}}">Login here</a></span> </p>
+						</div>
+					</div>
+					</div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
 {% endblock %}

@@ -11,7 +11,7 @@
 <div class="row">
 	{% for everything_item in searched_news %}
 	{% if everything_item.urlToImage%}
-	<div class="news-card card col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6">
+	<div class="news-card card col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6" style="background-color: transparent; border: none;">
 	  <div class="wrapper" style="background-image: url({{everything_item.urlToImage}}) ;">
 		<div class="date">
 		  <span class="year">{{everything_item.publishedAt|truncate(13)}}</span>

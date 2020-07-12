@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p class="btn btn-block btn-light disabled">Showing all {{sources|length}} sources</p>
 {% for source in sources %}
-<div class="col-sx-4 col-sm-3 col-md-5 col-lg-3 col-xl-4">
-	<div class="card center-div text-center">
+	<div class="card btn btn-light" style="margin: 5px; width: auto;">
 		<div class="card-body">
 			<a href="source/{{source.id}}">{{source.name}}</a>
 		</div>
 	</div>
-</div>
-
 {% endfor %}
 {% endblock %}

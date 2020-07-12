@@ -7,54 +7,38 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/forms.css')}}">
 <link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}">
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{title}}</title>
-  </head>
-  <body>
-    <div class='loader'></div>
-    <div class="navbar navbar-light nav-container" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <p class="navbar-brand text-uppercase" href="/"> Zorin News </p>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="btn-sign-outa"><a href="/">Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                  <li class="btn-sign-outa"><a href="/sources">Sources</a></li>
-                </ul>
-              <form method="get" class="nav navbar-nav" action="/search">
-                <div class="wrap">
-                  <div class="search">
-                     <input type="text" class="searchTerm" name="keyword" placeholder="What are you looking for?" required>
-                     <button type="submit" class="searchButton">
-                       <i class="fa fa-search"></i>
-                    </button>
-                  </div>
-               </div>
-              </form>
-                <ul class="nav navbar-nav navbar-right">
-                  {% if current_user.is_anonymous %}
-                  <li class="btn-sign-in text-center"><a href="{{url_for('auth.login')}}">Sign in</a></li>
-                  {% else %} 
-                  <li class="btn-sign-outa">
-                    <a href="{{url_for('main.profile',uname = current_user.username)}}">Profile</a>
-                  </li>
-                  <li class="btn-sign-out text-center"><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-                  {% endif %}
-                </ul>
-            </div>
-        </div>
-    </div>
-  </body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <!-- <a class="navbar-brand" href="/">Baseline News</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/" style="color: #006d77;">Baseline News <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="/sources" class="nav-link" style="color: #006d77;">Sources</a>
+      </li>
+      {% if current_user.is_anonymous %}
+      <li class="nav-item">
+        <a href="{{url_for('auth.login')}}" class="nav-link" style="color: #006d77;">Login</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a href="{{url_for('main.profile',uname = current_user.username)}}" class="nav-link" style="color: #006d77;">{{current_user.username}}</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{url_for('auth.logout')}}" class="nav-link" style="color: #006d77;">Log out</a>
+      </li>
+      {% endif %}
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="keyword" aria-label="Search">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" style="color: #006d77;">Search</button>
+    </form>
+  </div>
+</nav>
 </html>

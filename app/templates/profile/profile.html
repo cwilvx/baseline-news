@@ -3,29 +3,19 @@
 {% block content %}
 {% if user == current_user %}
 
-	<a href="{{url_for('main.update_bio',uname=user.username)}}">Edit bio</a>
 {% endif %}
-{% if user == current_user %}
-<form action="{{url_for('main.update_pic',uname = user.username)}}" method="post" enctype="multipart/form-data"  style="width: auto">
-	<input type="file" name="photo" class="form-control" id="" required >
-	<input type="submit">
-</form>
-{% endif %}
+
 <div class="container">
 	<div class="row">
 	  <div class="span6 offset3">
 		<div class="profile">
-		  <hr />
+		  <hr>
 		  <div class="user-info">
 			{% if  user.profile_pic_path%}
 			<div class="profile-picture" style="background:url({{url_for('static',filename = user.profile_pic_path)}}); background-size: 100% 100%; background-repeat: no-repeat text-align:center; "></div>
 			{%else%}
 			<div class="profile-picture" style="background:url({{url_for('static',filename = 'photos/default.jpg')}}); background-size: 100% 100%; background-repeat: no-repeat text-align:center; "></div>
 			{% endif %}
-			
-			<style>
-				
-			</style>
 		  </div>
 		  <div  class="name">
 			<span>{{user.username| capitalize}}</span>
@@ -38,6 +28,14 @@
 			{% endif %}
 		  </div>
 		</div>
+		{% if user == current_user %}
+		<h5 class="text-dark">Update Pic <span>	<a href="{{url_for('main.update_bio',uname=user.username)}}">Edit bio</a>
+		</span></h5>
+		<form action="{{url_for('main.update_pic',uname = user.username)}}" method="post" enctype="multipart/form-data"  style="width: auto">
+		<input type="file" name="photo" class="form-control" id="" required >
+		<input type="submit" class="btn btn-primary" value="Update">
+		</form>
+		{% endif %}
 	  </div>
 	</div>
   </div>

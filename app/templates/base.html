@@ -1,5 +1,25 @@
-{% extends 'bootstrap/base.html' %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://i.ibb.co/ggM0RtM/android-chrome-512x512.png" type="image/x-icon">
+</head>
+<body>
+{% block styles %}
+{{ bootstrap.load_css() }}
+{% endblock %}
+	
 {% block navbar %}
 	{% include 'navbar.html' %}
 {% endblock %}
+{% block content %}
+	
+{% endblock content %}
+	
+{% block scripts %}
+	{{ bootstrap.load_js() }}
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

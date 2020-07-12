@@ -1,26 +1,20 @@
-# News-Highlight
+# Baseline News
 
-News Highlight is a python web app made using flask framework. The app consumes the [News Api](https://newsapi.org/). It queries news from  54 different countries, 14 different languages,7 categories and 128 different news providers and shows to the user.
-
-| Behavior- the program should handle: | Input Example- When it receives: | Output Example- It should return: |
-| :-------------: | :-------------: | :-------------: |
-| User Sort Preference | Category,countries,sources | News from each category |
-| Show user articles from a single source | Click Source name on Source page |Redirect to the full article's website |
-| Enable user to continue reading an article | Click news title | Redirect to that article |
+Baseline News is a python web app made using flask (a python framework). The app consumes a [News Api](https://newsapi.org/). It queries News from  54 different countries, 14 different languages,7 categories and 128 different news providers and shows to the user on demand.
 
 # Installation
 * Clone Project
 * Navigate to the root folder of the app
-* Activate a virtual environment
-* Install all the dependencies needed. Look at requirements.txt
+* Add and activate a virtual environment
+* Install all the dependencies needed.
 * Sign up at [newsapi.org](newsapi.org) and get your apiKey
 * Fill the ```start.sh``` file with your API_KEY and desired SECRET_KEY
 * Make ```start.sh``` excecutable
 * Access the live site using the local host provided
-* Or access the hosted website by clicking [here](https://iamcwilv-news-highlights.herokuapp.com/)
+* Or access the site by clicking [here](https://baselinenews.herokuapp.com/)
 
 ```sh
-$ git clone git@github.com:geoffrey45/News-highlight.git
+$ git clone git@github.com:geoffrey45/Baseline-news.git
 $ cd News-highlight
 $ . virtual/bin/activate
 $ pip install -r requirements.txt
@@ -29,15 +23,12 @@ $ ./start.sh
 ```
 ## Known Bugs
 
-* 404 page not available right now
-* returning no results in search gives a nonetype error
-* database not linked in live version
+* Don't search unexisting word
 
 ## Tools Used
 * Python3.6.
-* Flask
-* CSS for styling.
-* HTML for webpage design.
+* Flask 1.12
+* HTML5
 
 ## Support and contact details
 
